@@ -1,0 +1,1 @@
+# cordova-plugin-multiple-documents-picker
