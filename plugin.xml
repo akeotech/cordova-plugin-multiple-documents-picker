@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-multiple-documents-picker" version="0.0.1">
+    <name>MultipleDocumentsPicker</name>
+
+    <description>An Android Cordova plugin that allows users to pick multiple documents at once.</description>
+    <license>MIT</license>
+
+    <keywords>cordova,android,documents,picker, multiple</keywords>
+    <repo>https://github.com/agarwalnaveen22/multiple-documents-picker/Multiple-Documents-Picker.git</repo>
+    <issue>https://github.com/agarwalnaveen22/multiple-documents-picker/issues</issue>
+  
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+  
+    <js-module src="www/multipledocumentspicker.js" name="multipleDocumentsPicker">
+        <clobbers target="window.plugins.multipleDocumentsPicker" />
+    </js-module>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MultipleDocumentsPicker">
+                <param name="android-package" value="com.akeo.cordova.plugin.MultipleDocumentsPicker"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/MultipleDocumentsPicker.java" target-dir="src/com/akeo/cordova/plugin" />
+    </platform>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MultipleDocumentsPicker">
+                <param name="ios-package" value="MultipleDocumentsPicker" />
+            </feature>
+        </config-file>
+        <source-file src="src/ios/MultipleDocumentsPicker.swift" />
+        <dependency id="cordova-plugin-add-swift-support" version="1.7.2"/>
+    </platform>
+</plugin>
