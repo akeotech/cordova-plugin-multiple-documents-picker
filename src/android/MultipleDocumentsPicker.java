@@ -87,8 +87,6 @@ public class MultipleDocumentsPicker extends CordovaPlugin {
          JSONObject result = new JSONObject();
 
          result.put("uri", uri.toString());
-         // TODO vonovak - FIELD_FILE_COPY_URI is implemented on iOS only (copyTo) settings
-         result.put("fileCopyUri", uri.toString());
 
          ContentResolver contentResolver = this.cordova.getActivity().getContentResolver();
 
