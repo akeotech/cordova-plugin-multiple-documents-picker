@@ -76,13 +76,13 @@ public class MultipleDocumentsPicker extends CordovaPlugin {
                     results.put(getMetadata(item.getUri()));
                 }
             }
-            this.callback.success(results);
+            this.callback.success(results.toString());
         } else {
             this.callback.error("Execute failed");
         }
  }
 
- private String getMetadata(Uri uri) {
+ private Object getMetadata(Uri uri) {
      try {
          JSONObject result = new JSONObject();
 
@@ -112,7 +112,7 @@ public class MultipleDocumentsPicker extends CordovaPlugin {
                  result.put("size", cursor.getInt(sizeIndex));
              }
          }
-         return result.toString();
+         return result;
      } catch (JSONException err) {
          return "Error";
      }
