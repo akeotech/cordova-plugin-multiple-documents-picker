@@ -47,7 +47,10 @@ import Foundation
     func documentWasSelected(urls: [URL]) {
         var documentsArray: [[String: String]] = [[String: String]]()
         for url in urls {
-            let result = (["uri": url.absoluteString, "name": url.lastPathComponent, "type": self.detectMimeType(url)])
+            let fileData = try! Data.init(contentsOf: url)
+            let base64String: String = fileData.base64EncodedString(options: NSData.Base64EncodingOptions.init(rawValue: 0))
+
+            let result = (["uri": url.absoluteString, "base64": base64String, "name": url.lastPathComponent, "type": self.detectMimeType(url)])
             documentsArray.append(result)
         }
         do {
