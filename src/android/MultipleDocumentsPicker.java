@@ -58,6 +58,10 @@ public class MultipleDocumentsPicker extends CordovaPlugin {
        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
        if(type == 1) {
         intent.setType("image/*");
+       } else if(type == 3) {
+           intent.setType("*/*");
+           String[] mimeTypes = {"application/pdf", "image/*", "video/*", "application/msword", "application/vnd.ms.excel", "application/vnd.ms-powerpoint", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "application/vnd.openxmlformats-officedocument.presentationml.presentation"};
+           intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
        } else {
         intent.setType("*/*");
        }

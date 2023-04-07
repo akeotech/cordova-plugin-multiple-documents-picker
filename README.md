@@ -19,7 +19,7 @@ Supported Platforms:
 	/**
 	 * Displays native prompt for user to select files.
 	 *
-	 * @param type (eg. 1 for images only and 2 for all type of files).
+	 * @param type (eg. 1 for images only, 2 for all type of files, 3 for images/videos/pdf/offices documents).
 	 *
 	 * @returns Promise containing selected file's data,
 	 * URI, MIME type and name.
