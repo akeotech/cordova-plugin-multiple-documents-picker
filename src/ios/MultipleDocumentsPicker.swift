@@ -8,6 +8,8 @@ import Foundation
         var types = [String]()
         if(type == 1){
             types = ["public.image"]
+        } else if(type == 3){
+            types = ["public.image", "public.movie", "com.adobe.pdf", "com.microsoft.word.doc", "com.microsoft.excel.xls", "com.microsoft.powerpoint.ppt", "org.openxmlformats.wordprocessingml.document", "org.openxmlformats.spreadsheetml.sheet", "org.openxmlformats.presentationml.presentation"]
         } else {
             types = ["public.item"]
         }
